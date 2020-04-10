@@ -1,0 +1,48 @@
+{
+  "name": "terra-unit-testing",
+  "version": "0.0.0",
+  "description": "Terra Unit Testing",
+  "main": "jest.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cerner/terra-unit-testing"
+  },
+  "keywords": [
+    "unit test",
+    "terra-unit-testing",
+    "Cerner",
+    "Terra"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-unit-testing/issues"
+  },
+  "engines": {
+    "node": "^8.10.0 || ^10.13.0 || >=11.10.1"
+  },
+  "homepage": "https://github.com/cerner/terra-unit-testing",
+  "eslintConfig": {
+    "extends": "terra"
+  },
+  "scripts": {
+    "clean": "rm -rf node_modules",
+    "clean:install": "npm run clean && npm install",
+    "lint": "eslint --ext .js,.jsx .",
+    "postpublish": "git push --follow-tags",
+    "prepublishOnly": "npm whoami && npm run lint",
+    "release:major": "npm version major -m 'Released version %s' && npm publish",
+    "release:minor": "npm version minor -m 'Released version %s' && npm publish",
+    "release:patch": "npm version patch -m 'Released version %s' && npm publish"
+  },
+  "dependencies": {
+    "babel-jest": "^25.3.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.1.0",
+    "eslint-config-terra": "^3.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "raf": "^3.4.1",
+    "terra-aggregate-translations": "^1.8.0"
+  }
+}
