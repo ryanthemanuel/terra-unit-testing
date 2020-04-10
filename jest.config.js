@@ -8,7 +8,6 @@ module.exports = {
   ],
   testMatch: [
     path.join(process.cwd(), '**', 'jest', '**', '(*.)(spec|test).js?(x)'),
-    path.join(__dirname, 'lib', 'theme-variables-have-values.test.js'),
   ],
   roots: [process.cwd()],
   snapshotSerializers: [
