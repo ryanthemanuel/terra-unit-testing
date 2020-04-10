@@ -8,13 +8,14 @@ module.exports = {
   ],
   testMatch: [
     path.join(process.cwd(), '**', 'jest', '**', '(*.)(spec|test).js?(x)'),
+    path.join(__dirname, 'lib', 'theme-variables-have-values.test.js'),
   ],
   roots: [process.cwd()],
   snapshotSerializers: [
     path.join(process.cwd(), 'node_modules', 'enzyme-to-json', 'serializer'),
   ],
   moduleNameMapper: {
-    '\\.(svg|jpg|png|md)$': path.join('fileMock.js'),
+    '\\.(svg|jpg|png|md)$': path.join(__dirname, 'lib', 'fileMock.js'),
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   moduleDirectories: [
